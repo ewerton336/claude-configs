@@ -1,0 +1,32 @@
+# Sensitive / per-machine state — never sync
+.credentials.json
+*.credentials.json
+
+# Runtime / cache / history — regenerated automatically
+backups/
+cache/
+debug/
+file-history/
+paste-cache/
+projects/
+sessions/
+session-env/
+shell-snapshots/
+telemetry/
+ide/
+tasks/
+plans/
+history.jsonl
+stats-cache.json
+.last-cleanup
+
+# Plugin runtime data — Claude Code regenerates these
+plugins/cache/
+plugins/data/
+plugins/marketplaces/
+plugins/install-counts-cache.json
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+*.swp
