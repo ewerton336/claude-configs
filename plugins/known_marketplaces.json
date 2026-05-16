@@ -5,7 +5,7 @@
       "repo": "anthropics/claude-plugins-official"
     },
     "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-05-15T16:32:15.714Z"
+    "lastUpdated": "2026-05-16T15:54:56.455Z"
   },
   "thedotmack": {
     "source": {
@@ -13,7 +13,7 @@
       "repo": "thedotmack/claude-mem"
     },
     "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\thedotmack",
-    "lastUpdated": "2026-04-30T16:45:45.279Z"
+    "lastUpdated": "2026-05-16T15:54:59.404Z"
   },
   "openai-codex": {
     "source": {
@@ -21,6 +21,6 @@
       "repo": "openai/codex-plugin-cc"
     },
     "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\openai-codex",
-    "lastUpdated": "2026-05-12T17:28:24.046Z"
+    "lastUpdated": "2026-05-16T15:55:01.395Z"
   }
 }
