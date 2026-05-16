@@ -11,6 +11,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+try {
+
 $RepoRoot   = Split-Path -Parent $PSScriptRoot
 $ClaudeHome = Join-Path $env:USERPROFILE '.claude'
 
@@ -91,3 +93,7 @@ Write-Host ""
 Write-Host "==> Sync-pull concluido." -ForegroundColor Green
 Write-Host "Reinicie o Claude Code para que ele recarregue settings, skills e re-clone marketplaces." -ForegroundColor Yellow
 Write-Host "Plugins listados em ~/.claude/plugins/installed_plugins.json talvez precisem ser re-instalados via '/plugin install <nome>'." -ForegroundColor Yellow
+} finally {
+    Write-Host ""
+    Read-Host "Pressione Enter para sair"
+}

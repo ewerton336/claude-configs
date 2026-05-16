@@ -12,6 +12,8 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
+try {
+
 $RepoRoot   = Split-Path -Parent $PSScriptRoot
 $ClaudeHome = Join-Path $env:USERPROFILE '.claude'
 
@@ -110,4 +112,8 @@ try {
     Write-Host "==> Push concluido." -ForegroundColor Green
 } finally {
     Pop-Location
+}
+} finally {
+    Write-Host ""
+    Read-Host "Pressione Enter para sair"
 }
