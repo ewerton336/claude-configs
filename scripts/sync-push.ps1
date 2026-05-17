@@ -2,6 +2,9 @@
 <#
 .SYNOPSIS
   Espelha ~/.claude (partes essenciais) para este repo, comita e da push.
+  Normaliza caminhos absolutos (C:\Users\<user>\.claude\...) para o token
+  portatil "%USERPROFILE%\.claude\..." antes de salvar no repo, para que
+  outras maquinas (com outro usuario Windows) consigam aplicar via sync-pull.
 #>
 
 [CmdletBinding()]
@@ -11,6 +14,29 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+
+function Write-Utf8NoBom {
+    param(
+        [Parameter(Mandatory)] [string]$Path,
+        [Parameter(Mandatory)] [string]$Content
+    )
+    $enc = New-Object System.Text.UTF8Encoding($false)
+    [System.IO.File]::WriteAllText($Path, $Content, $enc)
+}
+
+function ConvertTo-PortablePathJson {
+    <#
+      Recebe o conteudo (string) de um JSON de plugin do Claude e substitui
+      qualquer ocorrencia de "<DRIVE>:\\Users\\<usuario>\\.claude" pelo
+      token portatil "%USERPROFILE%\\.claude".
+      Operacao em texto (regex) para preservar o formato original do arquivo.
+    #>
+    param([Parameter(Mandatory)] [string]$JsonText)
+    # Em JSON, backslashes vem escapados como "\\\\" no source — mas no .NET
+    # string runtime sao "\\". Padrao casa: <letra>:\Users\<algo-sem-barra>\.claude
+    $pattern = '[A-Za-z]:\\\\Users\\\\[^\\\\""]+\\\\\.claude'
+    return [regex]::Replace($JsonText, $pattern, '%USERPROFILE%\\.claude')
+}
 
 try {
 
@@ -57,16 +83,20 @@ if (Test-Path $srcSkills) {
 }
 
 # --- 4) plugins (so manifestos, nao caches/marketplaces) ---
+#     Normaliza caminhos absolutos para %USERPROFILE% antes de salvar no repo.
 $pluginsDst = Join-Path $RepoRoot 'plugins'
+if (-not (Test-Path $pluginsDst)) { New-Item -ItemType Directory -Path $pluginsDst | Out-Null }
 foreach ($name in @('installed_plugins.json', 'known_marketplaces.json')) {
     $src = Join-Path $ClaudeHome "plugins\$name"
     $dst = Join-Path $pluginsDst $name
-    if (Test-Path $src) {
-        Copy-Item $src $dst -Force
-        Write-Host "  [OK] plugins/$name"
-    } else {
+    if (-not (Test-Path $src)) {
         Write-Host "  [--] plugins/$name ausente, pulando."
+        continue
     }
+    $raw       = Get-Content -Raw -LiteralPath $src
+    $portable  = ConvertTo-PortablePathJson -JsonText $raw
+    Write-Utf8NoBom -Path $dst -Content $portable
+    Write-Host "  [OK] plugins/$name (caminhos -> %USERPROFILE%)"
 }
 
 # --- 5) git: status, commit e push ---

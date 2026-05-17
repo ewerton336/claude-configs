@@ -4,23 +4,23 @@
       "source": "github",
       "repo": "anthropics/claude-plugins-official"
     },
-    "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-05-16T15:54:56.455Z"
+    "installLocation": "%USERPROFILE%\\.claude\\plugins\\marketplaces\\claude-plugins-official",
+    "lastUpdated": "2026-05-17T17:12:00.377Z"
   },
   "thedotmack": {
     "source": {
       "source": "github",
       "repo": "thedotmack/claude-mem"
     },
-    "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\thedotmack",
-    "lastUpdated": "2026-05-16T15:54:59.404Z"
+    "installLocation": "%USERPROFILE%\\.claude\\plugins\\marketplaces\\thedotmack",
+    "lastUpdated": "2026-05-17T17:09:04.934Z"
   },
   "openai-codex": {
     "source": {
       "source": "github",
       "repo": "openai/codex-plugin-cc"
     },
-    "installLocation": "C:\\Users\\ut18166\\.claude\\plugins\\marketplaces\\openai-codex",
-    "lastUpdated": "2026-05-16T15:55:01.395Z"
+    "installLocation": "%USERPROFILE%\\.claude\\plugins\\marketplaces\\openai-codex",
+    "lastUpdated": "2026-05-17T17:09:06.885Z"
   }
 }

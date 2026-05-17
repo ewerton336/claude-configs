@@ -4,7 +4,7 @@
     "frontend-design@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\claude-plugins-official\\frontend-design\\unknown",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\claude-plugins-official\\frontend-design\\unknown",
         "version": "unknown",
         "installedAt": "2026-04-29T15:13:50.642Z",
         "lastUpdated": "2026-05-06T11:45:04.725Z",
@@ -14,17 +14,17 @@
     "claude-mem@thedotmack": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\12.4.9",
-        "version": "12.4.9",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\13.2.0",
+        "version": "13.2.0",
         "installedAt": "2026-04-30T16:46:20.323Z",
-        "lastUpdated": "2026-04-30T16:46:20.323Z",
+        "lastUpdated": "2026-05-17T00:00:00.000Z",
         "gitCommitSha": "28b40c05f2e1316948453b10e4feecce01817b6c"
       }
     ],
     "skill-creator@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\claude-plugins-official\\skill-creator\\unknown",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\claude-plugins-official\\skill-creator\\unknown",
         "version": "unknown",
         "installedAt": "2026-05-12T11:01:39.344Z",
         "lastUpdated": "2026-05-12T11:01:39.344Z"
@@ -33,7 +33,7 @@
     "superpowers@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\5.1.0",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\5.1.0",
         "version": "5.1.0",
         "installedAt": "2026-05-12T11:03:51.815Z",
         "lastUpdated": "2026-05-12T11:03:51.815Z",
@@ -43,7 +43,7 @@
     "codex@openai-codex": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\openai-codex\\codex\\1.0.4",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\openai-codex\\codex\\1.0.4",
         "version": "1.0.4",
         "installedAt": "2026-05-12T17:28:34.337Z",
         "lastUpdated": "2026-05-12T17:28:34.337Z",
@@ -53,7 +53,7 @@
     "playwright@claude-plugins-official": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\ut18166\\.claude\\plugins\\cache\\claude-plugins-official\\playwright\\unknown",
+        "installPath": "%USERPROFILE%\\.claude\\plugins\\cache\\claude-plugins-official\\playwright\\unknown",
         "version": "unknown",
         "installedAt": "2026-05-13T11:37:35.739Z",
         "lastUpdated": "2026-05-13T11:37:35.739Z"
